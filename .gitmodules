@@ -1,9 +1,9 @@
 [submodule "Server"]
 	path = Server
-	url = https://github.com/SecretsOTheP/EQMacEmu
+	url=https://github.com/ThomasSilloway/EQ-Quarm
 [submodule "Quests"]
 	path = Quests
-	url = https://github.com/SecretsOTheP/quests
+	url=https://github.com/ThomasSilloway/quarm-quests
 [submodule "Maps"]
 	path = Maps
 	url = https://github.com/EQMacEmu/Maps

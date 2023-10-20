@@ -48,8 +48,8 @@ services:
     <<: *base-service
     command: ['/app/eqlaunch', 'dynzone1']
     ports:
-      - 7000-7374:7000-7374/tcp
-      - 7000-7374:7000-7374/udp
+      - 7360-7374:7360-7374/tcp
+      - 7360-7374:7360-7374/udp
     volumes:
       - shared:/app/shared
     depends_on:
@@ -89,6 +89,8 @@ services:
     build:
       context: .
       dockerfile: containers/database/Dockerfile
+    ports:
+      - "3308:3306"
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: enabled
       MYSQL_USER: ${DATABASE_USER:-eq}
