@@ -57,7 +57,8 @@ ADD Server/loginserver/login_util/*.conf /app/
 ADD Server/utils/patches/*.conf /app/
 
 ADD Maps /app/Maps
-ADD Quests /app/quests
+# Quests directory is mapped via docker compose volume, just need to make sure the directory exists
+RUN mkdir -p /app/quests
 
 ADD containers/eqemu-server/login.template.ini /app/
 ADD containers/eqemu-server/eqemu_config.template.json /app/

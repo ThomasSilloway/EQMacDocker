@@ -52,6 +52,7 @@ services:
       - 7360-7374:7360-7374/udp
     volumes:
       - shared:/app/shared
+      - ./Quests:/app/quests
     depends_on:
       - db
       - world
