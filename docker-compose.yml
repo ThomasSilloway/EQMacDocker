@@ -10,6 +10,7 @@ x-base-service: &base-service
     SERVER_SHORT_NAME: ${SERVER_SHORT_NAME:-EQMac Docker}
     SERVER_LONG_NAME: ${SERVER_LONG_NAME:-EQMac Docker}
     WAIT_HOSTS: db:3306
+    BUILD_LOGGING: true
 
 services:
   shared:
@@ -72,16 +73,6 @@ services:
   queryserv:
     <<: *base-service
     command: /app/queryserv
-    depends_on:
-      - db
-      - world
-
-  ucs:
-    <<: *base-service
-    command: /app/ucs
-    ports:
-      - 7778:7778/tcp
-      - 7778:7778/udp
     depends_on:
       - db
       - world
