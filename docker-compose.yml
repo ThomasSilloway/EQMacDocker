@@ -34,7 +34,6 @@ services:
     command: /app/world
     environment:
       <<: *base-environment
-      WAIT_PATHS: /app/shared/base_data
     ports:
       - 9000:9000/tcp
       - 9000:9000/udp
