@@ -1,3 +1,3 @@
 @echo off
 title ZONE
-wsl bash -c "cd /mnt/c/GithubRepos/QuarmDocker && bash start_zone.sh"
+wsl bash -c "cd /mnt/c/GithubRepos/QuarmDocker && docker-compose up zone"

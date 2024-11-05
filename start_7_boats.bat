@@ -1,3 +1,3 @@
 @echo off
 title BOATS
-wsl bash -c "cd /mnt/c/GithubRepos/QuarmDocker && bash start_boats.sh"
+wsl bash -c "cd /mnt/c/GithubRepos/QuarmDocker && docker-compose up boats"

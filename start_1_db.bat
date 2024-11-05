@@ -1,3 +1,3 @@
 @echo off
 title DB
-wsl bash -c "cd /mnt/c/GithubRepos/QuarmDocker && bash start_db.sh"
+wsl bash -c "cd /mnt/c/GithubRepos/QuarmDocker && docker-compose up db"
