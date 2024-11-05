@@ -1,6 +1,6 @@
 FROM mariadb:10.5
 
-ADD Server/utils/sql/database_full/quarm_2024-09-11-22_29.tar.gz /docker-entrypoint-initdb.d
+ADD Server/utils/sql/database_full/quarm_2024-10-21-13_53.tar.gz /docker-entrypoint-initdb.d
 RUN rm /docker-entrypoint-initdb.d/drop_system.sql
 
 ADD Server/loginserver/login_util/tblloginserversettings.sql /docker-entrypoint-initdb.d
