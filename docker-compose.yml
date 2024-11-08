@@ -57,6 +57,29 @@ services:
       - db
       - world
 
+  zone-single:
+    build:
+      context: .
+      dockerfile: containers/eqemu-server-zone/Dockerfile
+    environment: &base-environment
+      DATABASE_USER: ${DATABASE_USER:-eq}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD:-eq}
+      DATABASE_NAME: ${DATABASE_NAME:-eq}
+      SERVER_ADDRESS: ${SERVER_ADDRESS}
+      SERVER_SHORT_NAME: ${SERVER_SHORT_NAME:-EQMac Docker}
+      SERVER_LONG_NAME: ${SERVER_LONG_NAME:-EQMac Docker}
+      WAIT_HOSTS: db:3306
+      BUILD_LOGGING: true
+    command: ['/app/eqlaunch', 'dynzone1']
+    ports:
+      - 7360-7374:7360-7374/tcp
+      - 7360-7374:7360-7374/udp
+    volumes:
+      - shared:/app/shared
+      - ./Quests:/app/quests
+    profiles:
+      - zone-only
+
   boats:
     <<: *base-service
     command: ['/app/eqlaunch', 'boats']
